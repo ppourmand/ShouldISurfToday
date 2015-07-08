@@ -18,8 +18,14 @@ $( window ).load(function() {
 	 	$(".nav").find(".active").removeClass("active");
    		$(this).parent().addClass("active");
 
-   		var elporto_json = $.get(elporto_query, function(data){
-   			$("#temperature").append("<p>" + elporto_json.responseText + "</p>");
+   		$.get(elporto_query, function(data){
+   			most_recent = data[data.length - 1];
+   			console.log(most_recent);
+   			wave_temp = most_recent.condition.temperature;
+   			wave_height = most_recent.swell.components.combined.height;
+
+   			$("#temperature").append("<p>" + wave_temp + "</p>");
+   			$("#wave_height").append("<p>" + wave_height + "</p>");
    		});
    		
 	});
