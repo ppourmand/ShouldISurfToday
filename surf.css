@@ -1,0 +1,18 @@
+h1{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+}
+
+.centerDropdown {
+    left: auto !important;
+    right: -25% !important;
+}
+.centerDropdown:after {
+   left: auto !important;
+   right: 45% !important;
+}
+
+.dropdown {
+	text-align: center;
+}
